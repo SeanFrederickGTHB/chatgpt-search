@@ -1,0 +1,26 @@
+async function askGPT(){
+
+    const prompt = document.getElementById("prompt").value;
+    const responseBox = document.getElementById("response");
+
+    responseBox.innerHTML = "Thinking...";
+
+    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json",
+            "Authorization":"Bearer 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"
+        },
+        body:JSON.stringify({
+            model:"gpt-4o-mini",
+            messages:[
+                {role:"user", content: prompt}
+            ]
+        })
+    });
+
+    const data = await res.json();
+
+    responseBox.innerHTML =
+        data.choices[0].message.content;
+}
