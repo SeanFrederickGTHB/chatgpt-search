@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ChatGPT Search</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>ChatGPT Search</h1>
+
+    <div class="search-box">
+        <input type="text" id="prompt" placeholder="Ask anything...">
+        <button onclick="askGPT()">Search</button>
+    </div>
+
+    <div id="response"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
